@@ -9,7 +9,13 @@ namespace CurrencyExchangeWebApp
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
-                        "~/Scripts/jquery-{version}.js"));
+                        "~/Scripts/jquery-{version}.js",
+                        "~/Scripts/datatables.min.js",
+                        "~/Scripts/dataTables.buttons.min.js",
+                        "~/Scripts/buttons.colVis.min.js",
+                        "~/Scripts/buttons.html5.min.js",
+                        "~/Scripts/dataTables.dateTime.min.js",
+                        "~/Scripts/dataTables.responsive.min.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                         "~/Scripts/jquery.validate*"));
@@ -24,7 +30,11 @@ namespace CurrencyExchangeWebApp
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
-                      "~/Content/site.css"));
+                      "~/Content/site.css",
+                      "~/Content/datatables.min.css",
+                      "~/Content/buttons.dataTables.min.css",
+                      "~/Content/dataTables.dateTime.min.css",
+                      "~/Content/responsive.dataTables.min.css"));
         }
     }
 }

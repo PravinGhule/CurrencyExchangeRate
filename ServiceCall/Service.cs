@@ -2,6 +2,7 @@
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -13,7 +14,7 @@ namespace ServiceCall
     public class Service : IService
     {
         //Hosted web API REST Service base url
-        string Baseurl = "https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/aud.json";
+        string Baseurl = ConfigurationManager.AppSettings["serviceURL"];
         public LinkedList<CurrencyModel> GetAll()
         {
             LinkedList<CurrencyModel> currencyModelList;
