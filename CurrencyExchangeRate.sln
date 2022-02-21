@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CurrencyExchangeWebApp", "C
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceCall", "ServiceCall\ServiceCall.csproj", "{78AFACA1-AE4C-4A55-9AE1-779776BA91FB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CurrencyExchangeWebApp.Tests", "CurrencyExchangeWebApp.Tests\CurrencyExchangeWebApp.Tests.csproj", "{EC943030-E715-4B7E-99EB-E4CF97FC107E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{78AFACA1-AE4C-4A55-9AE1-779776BA91FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{78AFACA1-AE4C-4A55-9AE1-779776BA91FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{78AFACA1-AE4C-4A55-9AE1-779776BA91FB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC943030-E715-4B7E-99EB-E4CF97FC107E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC943030-E715-4B7E-99EB-E4CF97FC107E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC943030-E715-4B7E-99EB-E4CF97FC107E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC943030-E715-4B7E-99EB-E4CF97FC107E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

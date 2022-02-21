@@ -165,7 +165,10 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Manager\" />
     <Folder Include="Models\" />
+    <Folder Include="Repository\" />
+    <Folder Include="SortingAlgorithm\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
