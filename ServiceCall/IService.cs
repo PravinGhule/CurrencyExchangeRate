@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace ServiceCall
 {
-    public class Class1
+    public interface IService
     {
+        LinkedList<CurrencyModel> GetAll();
     }
 }
