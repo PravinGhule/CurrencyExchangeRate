@@ -1,0 +1,39 @@
+﻿@using System.Collections.Generic;
+@using ServiceCall;
+@model LinkedList<CurrencyModel>
+@if (Model.Count() > 0)
+{
+    <table id="currencyGrid" class="table table-bordered display nowrap" style="width:100%">
+        <thead>
+            <tr class="success">
+                <th>CurrencyCode</th>
+                <th>ExchangeValue</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var value in Model)
+            {
+                <tr>
+                    <td>@value.CurrencyCode</td>
+                    <td>@value.ExchangeValue</td>
+                </tr>
+            }
+    </table>
+}
+else
+{
+    <h2>No Data Found</h2>
+}
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#currencyGrid').DataTable({
+            dom: 'Bfrtip',
+            "ordering": false,
+            buttons: [
+                'csv'
+            ]
+        });
+    });
+</script>
