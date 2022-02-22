@@ -33,7 +33,7 @@ namespace ServiceCall
                     dataStream.Close();
                 }
 
-                if (result != null || result != "")
+                if (!string.IsNullOrWhiteSpace(result))
                 {
                     JObject jsonObj = JObject.Parse(result);
                     var currencyJsonObj = jsonObj["aud"];

@@ -49,11 +49,22 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="SortingAlgorithm\BubbleSortTest.cs" />
     <Compile Include="UnitTest1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CurrencyExchangeWebApp\CurrencyExchangeWebApp.csproj">
+      <Project>{235BF05C-578E-4DEB-8081-99C2623818CE}</Project>
+      <Name>CurrencyExchangeWebApp</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ServiceCall\ServiceCall.csproj">
+      <Project>{78AFACA1-AE4C-4A55-9AE1-779776BA91FB}</Project>
+      <Name>ServiceCall</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

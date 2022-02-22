@@ -31,7 +31,6 @@ namespace CurrencyExchangeWebApp.Controllers
             catch (Exception ex)
             {
                 return View("Error");
-                throw ex;
             }
             return PartialView("_CurrencyExchangeRateGrid", result);
         }
