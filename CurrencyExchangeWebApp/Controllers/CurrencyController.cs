@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using ServiceCall;
 
 namespace CurrencyExchangeWebApp.Controllers
 {
@@ -22,7 +23,16 @@ namespace CurrencyExchangeWebApp.Controllers
 
         public ActionResult GetExchangeRates()
         {
-            var result = _iCurrencyExchangeManager.GetAllCurrencyExchangeRates();
+            LinkedList<CurrencyModel> result = new LinkedList<CurrencyModel>();
+            try
+            {
+                result = _iCurrencyExchangeManager.GetAllCurrencyExchangeRates();
+            }
+            catch (Exception ex)
+            {
+                return View("Error");
+                throw ex;
+            }
             return PartialView("_CurrencyExchangeRateGrid", result);
         }
     }

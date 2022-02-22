@@ -19,22 +19,37 @@ namespace ServiceCall
         {
             LinkedList<CurrencyModel> currencyModelList;
 
-            HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create(Baseurl);
-            request.Method = "GET";
-            String result = String.Empty;
-            using (HttpWebResponse response = (HttpWebResponse)request.GetResponse())
+            try
             {
-                Stream dataStream = response.GetResponseStream();
-                StreamReader reader = new StreamReader(dataStream);
-                result = reader.ReadToEnd();
-                reader.Close();
-                dataStream.Close();
-            }
-            JObject jsonObj = JObject.Parse(result);
-            var currencyJsonObj = jsonObj["aud"];
-            Dictionary<string, decimal> unsortedDisctionary = JsonConvert.DeserializeObject<Dictionary<string, decimal>>(currencyJsonObj.ToString());
+                HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create(Baseurl);
+                request.Method = "GET";
+                String result = String.Empty;
+                using (HttpWebResponse response = (HttpWebResponse)request.GetResponse())
+                {
+                    Stream dataStream = response.GetResponseStream();
+                    StreamReader reader = new StreamReader(dataStream);
+                    result = reader.ReadToEnd();
+                    reader.Close();
+                    dataStream.Close();
+                }
 
-            currencyModelList = new LinkedList<CurrencyModel>(unsortedDisctionary.Select(x => new CurrencyModel { CurrencyCode = x.Key, ExchangeValue = x.Value }).ToList());
+                if (result != null || result != "")
+                {
+                    JObject jsonObj = JObject.Parse(result);
+                    var currencyJsonObj = jsonObj["aud"];
+                    Dictionary<string, decimal> unsortedDisctionary = JsonConvert.DeserializeObject<Dictionary<string, decimal>>(currencyJsonObj.ToString());
+
+                    currencyModelList = new LinkedList<CurrencyModel>(unsortedDisctionary.Select(x => new CurrencyModel { CurrencyCode = x.Key, ExchangeValue = x.Value }).ToList());
+                }
+                else
+                {
+                    currencyModelList = new LinkedList<CurrencyModel>();
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
 
             return currencyModelList;
         }
